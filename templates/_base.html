@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Base{% endblock title %}</title>
+  <!-- Bootstrap CSS-->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CSS-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS-->
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    .content {
+      flex: 1 0 auto;
+    }
+    .footer {
+      flex-shrink: 0;
+    }
+    .see-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .see-links a {
+      margin: 0 10px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body class="d-flex flex-column">
+  <header>
+    <div class="container mt-3 see-links">
+      <p>See: <a href="{% url 'home' %}">Home</a> • <a href="{% url 'works' %}">Works</a> • <a href="{% url 'projects' %}">Projects</a> • <a href="{% url 'life' %}">Life</a></p>
+    </div>
+  </header>
+  <div class="container content">
+    {% block content %}
+    {% endblock content %}
+  </div>
+  <footer class="mt-4 text-center footer">
+    <div class="social-icons mt-3">
+      <a href="https://github.com/raihanfauzan962" class="mx-2"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/raihanfauzan962/" class="mx-2"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/_raihanfauzan/" class="mx-2"><i class="fab fa-instagram"></i></a>
+      <a href="https://drive.google.com/file/d/1HbwrQOVKhe_SHNL5zyfzKC_XmKFrN3tm/view?usp=sharing" class="mx-2"><i class="fas fa-file-pdf"></i></a>
+      <a href="mailto:raihanfauzan962@gmail.com" class="mx-2"><i class="fas fa-envelope"></i></a>
+      <p>Created by Raihan Fauzan © 2024. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- Bootstrap JS-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Custom JavaScript-->
+  <script src="{% static 'js/base.js' %}"></script>
+</body>
+
+</html>
